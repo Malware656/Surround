@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/full_screen_player"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/player_toolbar"
+        app:titleTextColor="@color/blue_grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Current Playing" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:background="@color/blue_900"
+        android:src="@drawable/ic_baseline_audiotrack_24"
+        android:padding="120dp"
+        android:id="@+id/full_screen_album_art"
+        app:layout_constraintTop_toBottomOf="@+id/player_toolbar"
+        android:layout_margin="12dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/song_details"
+        android:layout_margin="12dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/full_screen_album_art"
+        android:weightSum="2">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Song name"
+            android:textColor="@color/blue_900"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Artist name"
+            android:layout_margin="5dp"
+            android:textColor="@color/blue_grey"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/player_slider"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/song_details" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/rounded_rectangle"
+        android:backgroundTint="@color/blue_900"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_slider">
+
+        <ImageButton
+            android:id="@+id/repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Repeat"
+            android:src="@drawable/ic_baseline_repeat_24" />
+
+        <ImageButton
+            android:id="@+id/skip_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Skip previous"
+            android:src="@drawable/ic_baseline_skip_previous_24"
+            app:tint="@color/blue_grey" />
+
+        <ImageButton
+            android:id="@+id/play_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Play/Pause"
+            android:src="@drawable/ic_baseline_play_circle_outline_24"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/skip_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Skip Next"
+            android:src="@drawable/ic_baseline_skip_next_24"
+            app:tint="@color/blue_grey" />
+
+        <ImageButton
+            android:id="@+id/stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Stop"
+            android:src="@drawable/ic_baseline_stop_24" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

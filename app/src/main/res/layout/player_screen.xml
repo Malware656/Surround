@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/player_screen"
+    android:layout_height="match_parent">
+
+    <!-- BottomSheet -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        android:background="@color/blue_grey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/mini_player"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:id="@+id/included_mini_player">
+            </include>
+            <include layout="@layout/full_screen_player"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:id="@+id/included_full_screen_player">
+            </include>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
